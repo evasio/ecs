@@ -8,6 +8,7 @@ use PhpCsFixer\Fixer\Basic\CurlyBracesPositionFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer;
 use PhpCsFixer\Fixer\Operator\NewWithBracesFixer;
 use PhpCsFixer\Fixer\Operator\NewWithParenthesesFixer;
+use PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer;
 use SlevomatCodingStandard\Sniffs\Classes\EmptyLinesAroundClassBracesSniff;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
@@ -33,6 +34,7 @@ return function (ECSConfig $ecsConfig): void {
 	$ecsConfig->skip([
 		BracesFixer::class,
 		NoBlankLinesAfterClassOpeningFixer::class,
+		NoExtraBlankLinesFixer::class,
 		NewWithBracesFixer::class,
 		CurlyBracesPositionFixer::class,
 		BracesPositionFixer::class,
