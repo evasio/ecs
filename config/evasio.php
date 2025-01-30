@@ -13,25 +13,21 @@ use SlevomatCodingStandard\Sniffs\Classes\EmptyLinesAroundClassBracesSniff;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
-return function (ECSConfig $ecsConfig): void {
-	$ecsConfig->indentation('tab');
-	$ecsConfig->lineEnding("\n");
-
-	$ecsConfig->sets([
+return ECSConfig::configure()
+	->withSpacing(indentation: 'tab', lineEnding: "\n")
+	->withSets([
 		SetList::ARRAY,
 		SetList::NAMESPACES,
 		SetList::COMMENTS,
 		SetList::STRICT,
 		SetList::PHPUNIT,
 		SetList::PSR_12,
-	]);
-
-	$ecsConfig->rules([
+	])
+	->withRules([
 		NewWithParenthesesFixer::class,
 		EmptyLinesAroundClassBracesSniff::class,
-	]);
-
-	$ecsConfig->skip([
+	])
+	->withSkip([
 		BracesFixer::class,
 		NoBlankLinesAfterClassOpeningFixer::class,
 		NoExtraBlankLinesFixer::class,
@@ -39,4 +35,3 @@ return function (ECSConfig $ecsConfig): void {
 		CurlyBracesPositionFixer::class,
 		BracesPositionFixer::class,
 	]);
-};
