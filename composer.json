@@ -4,8 +4,8 @@
   "license": "MIT",
   "require": {
     "php": ">=8.2",
-    "symplify/easy-coding-standard": "^13.2.1",
-    "slevomat/coding-standard": "^8.29.0"
+    "symplify/easy-coding-standard": "^13.2.17",
+    "slevomat/coding-standard": "^8.31.0"
   },
   "autoload": {
     "psr-4": {
